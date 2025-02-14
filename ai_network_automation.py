@@ -55,12 +55,14 @@ class AINetworkAutomation:
 if __name__ == "__main__":
     device_params = {
         "device_type": "cisco_ios",
-        "host": "192.168.1.101",
-        "username": "cisco",
-        "password": "cisco",
-        "secret": "cisco",
+        "host": "192.168.1.1",
+        "username": "admin",
+        "password": "password",
+        "secret": "enable_password",
+        "port": 22,
+        "session_log": "cisco_virl_log.txt",  # Log session for debugging
     }
-    ai_network = AINetworkAutomation(device_params, openai_api_key="API")
+    ai_network = AINetworkAutomation(device_params, openai_api_key="your-api-key")
     ai_network.connect()
     print(ai_network.monitor_network())
     ai_network.close_connection()
